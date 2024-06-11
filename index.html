@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto de TI Verde</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('FMX_TI_VERDE.png'); /* Caminho para a imagem de fundo */
+            background-size: cover; /* Redimensiona a imagem para cobrir todo o fundo */
+            background-position: center; /* Centraliza a imagem */
+        }
+
+        header {
+            background-color: #004d00; /* Dark green */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center; /* Centraliza os itens */
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            display: none;
+            padding: 20px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+        }
+
+        footer {
+            background-color: #022d02; /* Darker green */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid #28a745;
+            padding-top: 20px;
+        }
+
+        footer p {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        input, textarea {
+            width: calc(100% - 22px);
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007300; /* Medium green */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #005c00;
+        }
+
+        #btnConscientizacao {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        #btnConscientizacao:hover {
+            background-color: #0056b3;
+        }
+
+        #infoDescarte {
+            display: none;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+
+        #infoDescarte ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        #linkISO {
+            display: block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            margin: 20px auto;
+            width: fit-content;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        #linkISO:hover {
+            background-color: #218838;
+        }
+
+        #quizButton {
+            background-color: #FFD700;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        #quizButton:hover {
+            background-color: #FFC107;
+        }
+
+        /* Estilos para telas menores */
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 10px auto; /* Centraliza os itens */
+            }
+
+            button {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            header {
+                padding: 10px;
+            }
+
+            button {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            #btnConscientizacao, #quizButton {
+                padding: 8px;
+                font-size: 12px;
+            }
+
+            footer p {
+                position: static;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Projeto de TI Verde</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre o Projeto</a></li>
+                <li><a href="#metodologia">Metodologia</a></li>
+                <li><a href="#impacto">Impacto</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <button id="quizButton" onclick="irParaQuiz()">Quiz Ambiental</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre">
+            <h2>Sobre o Projeto</h2>
+            <p>Este projeto visa promover ações sustentáveis para a preservação do meio ambiente através de tecnologia da informação.</p>
+        </section>
+        <section id="metodologia">
+            <h2>Metodologia</h2>
+            <p>A metodologia aplicada inclui processos inovadores e sustentáveis para desenvolver nossas soluções tecnológicas.</p>
+        </section>
+        <section id="impacto">
+            <h2>Impacto</h2>
+            <p>Detalhamento dos impactos positivos de nosso projeto, tanto ambientais quanto tecnológicos.</p>
+        </section>
+        <section id="recursos">
+            <h2>Recursos</h2>
+            <p>Informações sobre as práticas sustentáveis adotadas e como elas beneficiam o ambiente e a sociedade.</p>
+        </section>
+        <section id="contato">
+            <h2>Contato</h2>
+            <form action="#" method="post">
+                <input type="text" name="nome" placeholder="Seu nome" required><br>
+                <input type="email" name="email" placeholder="Seu e-mail" required><br>
+                <textarea name="mensagem" placeholder="Sua mensagem" required></textarea><br>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        <button id="btnConscientizacao" onclick="mostrarInformacoes()">Saiba mais sobre o descarte de lixo eletrônico</button>
+        <div id="infoDescarte">
+            <h3>Como contribuir:</h3>
+            <ul>
+                <li>Separar corretamente seu lixo eletrônico</li>
+                <li>Levar para pontos de coleta específicos, como postos de reciclagem ou lojas que oferecem programas de reciclagem</li>
+                <li>Certificar-se de que os itens estejam limpos e desmontados, se possível, para facilitar o processo de reciclagem</li>
+                <li>Doar equipamentos eletrônicos funcionais para instituições de caridade ou reutilizá-los</li>
+                <li>Entregar aparelhos danificados ou obsoletos em locais de reciclagem designados</li>
+                <li>Descartar líquidos presentes em dispositivos eletrônicos seguindo as orientações de segurança</li>
+            </ul>
+        </div>
+        <a id="linkISO" href="https://www.iso.org/iso-14001-environmental-management.html" target="_blank">Visite o site oficial da ISO 14001</a>
+
+        <!-- Seção do Quiz -->
+        <section id="quiz">
+            <h2>Quiz Ambiental</h2>
+            <p>Teste seus conhecimentos sobre reciclagem e sustentabilidade!</p>
+            
+            <div id="pergunta1">
+                <p>Qual é o item eletrônico que não deve ser descartado no lixo comum?</p>
+                <button onclick="verificarResposta(1, 'incorrecto')">Bateria de celular</button>
+                <button onclick="verificarResposta(1, 'correcto')">Todos os mencionados</button>
+                <button onclick="verificarResposta(1, 'incorrecto')">Monitor</button>
+                <p id="resultadoQuiz1"></p>
+            </div>
+
+            <div id="pergunta2" style="display:none;">
+                <p>Qual destes materiais é reciclável?</p>
+                <button onclick="verificarResposta(2, 'incorrecto')">Papel higiênico usado</button>
+                <button onclick="verificarResposta(2, 'incorrecto')">Guardanapo sujo</button>
+                <button onclick="verificarResposta(2, 'correcto')">Garrafa de vidro</button>
+                <p id="resultadoQuiz2"></p>
+            </div>
+
+            <div id="pergunta3" style="display:none;">
+                <p>Qual é a principal vantagem da reciclagem?</p>
+                <button onclick="verificarResposta(3, 'correcto')">Reduzir a quantidade de lixo nos aterros</button>
+                <button onclick="verificarResposta(3, 'incorrecto')">Aumentar a poluição</button>
+                <button onclick="verificarResposta(3, 'incorrecto')">Desperdiçar recursos naturais</button>
+                <p id="resultadoQuiz3"></p>
+            </div>
+
+            <div id="mensagemFinal" style="display:none;">
+                <h3>Parabéns!</h3>
+                <p>Você completou o quiz e demonstrou seu conhecimento sobre sustentabilidade e reciclagem. Continue aplicando esses conhecimentos no seu dia a dia para contribuir com um futuro mais sustentável!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Projeto de TI Verde. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function mostrarInformacoes() {
+            var info = document.getElementById('infoDescarte');
+            info.style.display = info.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function verificarResposta(pergunta, resposta) {
+            const resultadoQuiz = document.getElementById(`resultadoQuiz${pergunta}`);
+            if (resposta === 'correcto') {
+                resultadoQuiz.innerText = 'Correto!';
+                setTimeout(() => {
+                    if (pergunta < 3) {
+                        document.getElementById(`pergunta${pergunta}`).style.display = 'none';
+                        document.getElementById(`pergunta${pergunta + 1}`).style.display = 'block';
+                    } else {
+                        document.getElementById(`pergunta${pergunta}`).style.display = 'none';
+                        document.getElementById('mensagemFinal').style.display = 'block';
+                    }
+                }, 1000); // Delay para mostrar a mensagem de correção
+            } else {
+                resultadoQuiz.innerText = 'Ops, tente novamente!';
+            }
+        }
+
+        function irParaQuiz() {
+            document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+            var quizSection = document.getElementById('quiz');
+            quizSection.style.display = 'block';
+            window.scrollTo({
+                top: quizSection.offsetTop,
+                behavior: "smooth"
+            });
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var targetElement = document.querySelector(this.getAttribute('href'));
+                document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+                if (targetElement) {
+                    targetElement.style.display = 'block';
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        window.onload = () => {
+            var firstSection = document.querySelector('section');
+            if (firstSection) firstSection.style.display = 'block';
+        };
+    </script>
+</body>
+</html>
